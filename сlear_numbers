@@ -1,0 +1,7 @@
+def clear_numbers(d):
+    s=d[:d.rfind('.')]
+    s=s.replace('.','')
+    s=s.replace('-','')
+    for i in range(10):
+        s=s.replace(str(i),'')
+    return(s)
