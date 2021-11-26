@@ -1,0 +1,4 @@
+def get_data_keyboard():
+    data = input()
+    purp = input()
+    return data,purp
