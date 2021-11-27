@@ -12,7 +12,7 @@ def recogn_file(name,t):
     data=pd.read_csv(name)
     data=data.tolist()
     data_prep_pred(data)
-    t.predict(data)
+    return(t.predict(data))
     
 from predictions import get_predictions
 from predictions import data_prep_pred
