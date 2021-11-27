@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[213]:
+# In[3]:
 
 
 import pandas as pd
@@ -56,14 +56,12 @@ def Data_Prep(data_name,purp):  #подготовка данных для дал
         for i in Data_train:
             X_train.append(i[0])
             Y_train.append(i[1])
-    return([X_train,Y_train],Data_valid,)
-Data_Prep('dataset_isp.csv',purp='T')
-
-
-# In[214]:
-
-
-
+        X_valid=[]
+        Y_valid=[]
+        for i in Data_valid:
+            X_valid.append(i[0])
+            Y_valid.append(i[1])
+    return([X_train,Y_train],[X_valid,Y_valid])
 
 
 # In[ ]:
