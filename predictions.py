@@ -1,13 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 import numpy as np
 from Data_prep import est_prep
 from Data_prep import host_to_domain
 from estv import estv 
 from turn_into_vector import words_into_vector 
-# In[ ]:
-
 
 def get_predictions(vector,model1,model2,model3):
     Data_Chisl_to_pred=[]
@@ -28,13 +23,8 @@ def get_predictions(vector,model1,model2,model3):
         Data_pred_avg.append((Chisl_pred[i]+dlin_pred[i]+est_pred[i])/3)
     return Data_pred_avg
 
-
-# In[ ]:
-
-
 def data_prep_pred(data_to_predict):
     data = host_to_domain(data_to_predict)
     est = estv(est_prep(data))
     vector = words_into_vector(data,est)
     return vector
-
