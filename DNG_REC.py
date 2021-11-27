@@ -7,10 +7,10 @@ def recogn_domen(domen,t):
 
 from turn_into_vector import words_into_vector
 import pandas as pd
-from predictions import 
+from predictions import data_prep_pred
 def recogn_file(name,t):
     data=pd.read_csv(name)
-    data=data.tolist()
+    data=data.values.tolist()
     data_prep_pred(data)
     return(t.predict(data))
     
@@ -37,4 +37,3 @@ if(inp[-4:]=='.csv'):
     recogn_file(inp,t)
 else:
     recogn_domen(inp,t)
-
