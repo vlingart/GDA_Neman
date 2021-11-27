@@ -4,7 +4,7 @@
 import numpy as np
 from Data_prep import host_to_domain 
 from estv import estv 
-from turn_into_vector import words_into_vetor 
+from turn_into_vector import words_into_vector 
 # In[ ]:
 
 
