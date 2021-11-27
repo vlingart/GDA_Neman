@@ -16,5 +16,5 @@ def get_data(Data):
     Data_Chisl=np.array(Data_Chisl)
     Data_dlin=np.array(Data_dlin).reshape(-1,1)
     Data_est=np.array(Data_est).reshape(-1,1)
-    return(Data_Chisl,Data_dlin,Data_est)
+    return(Data_Chisl,Data_dlin,Data_est,Data_y)
 
