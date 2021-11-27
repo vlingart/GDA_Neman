@@ -9,7 +9,7 @@ from turn_into_vector import words_into_vector
 # In[ ]:
 
 
-def get_predictions(vectors,model1,model2,model3):
+def get_predictions(vector,model1,model2,model3):
     Data_Chisl_to_pred=[]
     Data_dlin_to_pred=[]
     Data_est_to_pred=[]
