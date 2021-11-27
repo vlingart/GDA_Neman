@@ -24,7 +24,7 @@ from get_data import get_data
 from estv import estv
 t=MLPClassifier((20)*100, random_state=1,activation='logistic',max_iter=3000,warm_start=True)
 y=np.array([0]).reshape(1,-1)
-x=np.array([0]*36).reshape(1,-1)
+x=np.array([0]*38).reshape(1,-1)
 t.fit(x,y)
 with open('weights.txt','r') as r:
     for i in range(len(t.coefs_)):
