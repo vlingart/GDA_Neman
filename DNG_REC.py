@@ -24,7 +24,7 @@ with open('weights.txt','r') as r:
 print('Введите путь к файлу(csv) или домен')
 inp=input()
 if(inp[-4:]=='.csv'):
-    recogn_file()
+    recogn_file(inp)
 else:
-    recogn_domen()
+    recogn_domen(inp)
 
