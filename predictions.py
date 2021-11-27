@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-
+import numpy as np
+import host_to_domain from Data_prep
+import estv from estv
+import words_into_vetor from turn_into_vector
 # In[ ]:
 
 
