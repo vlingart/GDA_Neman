@@ -2,9 +2,9 @@
 # coding: utf-8
 
 import numpy as np
-import host_to_domain from Data_prep
-import estv from estv
-import words_into_vetor from turn_into_vector
+from Data_prep import host_to_domain 
+from estv import estv 
+from turn_into_vector import words_into_vetor 
 # In[ ]:
 
 
