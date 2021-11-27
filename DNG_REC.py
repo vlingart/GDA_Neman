@@ -8,7 +8,7 @@ def recogn_domen(domen,t):
 from turn_into_vector import words_into_vector
 import pandas as pd
 from predictions import 
-def recogn_file(name):
+def recogn_file(name,t):
     data=pd.read_csv(name)
     data=data.tolist()
     data_prep_pred(data)
