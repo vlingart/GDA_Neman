@@ -16,8 +16,8 @@ def est_prep(s):  #подготовка итоговой выборки доме
             s[i]=s[i].replace(str(j),'')
     return(s)
 def host_to_domain(hosts):  #превращение домена в хост путем удаления доменов более высокого уровня, чем рассматриваемый
-    for i in hosts:
-        i=i[0:i.index('.')]
+    for i in range(len(hosts)):
+        hosts[i]=hosts[i][0:hosts[i].index('.')]
     return(hosts)
 def domains_maker(Data):  #разбиение данной выборки на "хорошие" и "плохие" домены (сгенерированные и реальные)
     s_c=[]
