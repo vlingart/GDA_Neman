@@ -36,5 +36,4 @@ def data_prep_pred(data_to_predict):
     data = host_to_domain(data_to_predict)
     est = estv(est_prep(data))
     vector = words_into_vector(data,est)
-    return vector
-
+    return np.array(vector).reshape(-1,1)
