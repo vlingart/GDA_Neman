@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[3]:
-
-
 import pandas as pd
 import random
 from estv import estv
@@ -62,10 +56,3 @@ def Data_Prep(data_name,purp):  #подготовка данных для дал
             X_valid.append(i[0])
             Y_valid.append(i[1])
     return([X_train,Y_train],[X_valid,Y_valid])
-
-
-# In[ ]:
-
-
-
-
