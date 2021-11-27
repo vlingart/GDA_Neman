@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # In[24]:
-def recogn_domen(domen):
+def recogn_domen(domen,t):
     return t.predict(data_prep_pred([domen]))
 
 from predictions import get_predictions
