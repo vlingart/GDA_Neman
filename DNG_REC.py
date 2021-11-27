@@ -5,6 +5,15 @@
 def recogn_domen(domen,t):
     return t.predict(data_prep_pred([domen]))
 
+from turn_into_vector import words_into_vector
+import pandas as pd
+from predictions import 
+def recogn_file(name):
+    data=pd.read_csv(name)
+    data=data.tolist()
+    data_prep_pred(data)
+    t.predict(data)
+    
 from predictions import get_predictions
 from predictions import data_prep_pred
 from Data_prep import Data_Prep
