@@ -15,6 +15,6 @@ def estv(words):
     for word in words:
         estestvennost_slova = 1
         for i in range(len(word)-1):
-            estestvennost_slova *= dataset[word[i+1]+word[i]]
+            estestvennost_slova *= dataset[word[i]+word[i+1]]
         estesvennost.append(estestvennost_slova)
     return(estesvennost)
