@@ -8,6 +8,7 @@ def recogn_domen(domen,t):
 
 from turn_into_vector import words_into_vector
 import pandas as pd
+import joblib
 from predictions import data_prep_pred
 def recogn_file(name,t):
     data=pd.read_csv(name)
@@ -28,11 +29,10 @@ from estv import estv
 t=MLPClassifier((20)*100, random_state=1,activation='logistic',max_iter=3000,warm_start=True)
 y=np.array([0])
 x=np.array([0]*38).reshape(1,-1)
-with open('weights.txt','r') as r:
-    for i in range(len(t.coefs_)):
-        for j in range(len(t.coefs_[i])):
-            for l in range(len(t.coefs_[i][j])): 
-                t.coefs_[i][j][l]=r.readline()[:-1]
+t = joblib.load("model.pkl")
+t.score(x, y)
+
+
 print('Введите путь к файлу(csv) или домен')
 inp=input()
 if(inp[-4:]=='.csv'):
