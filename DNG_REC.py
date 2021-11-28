@@ -5,14 +5,17 @@
 def recogn_domen(domen,t):
     return t.predict(data_prep_pred([domen]))
 
+
 from turn_into_vector import words_into_vector
 import pandas as pd
 from predictions import data_prep_pred
 def recogn_file(name,t):
     data=pd.read_csv(name)
     data=data.values.tolist()
-    data_prep_pred(data)
-    return(t.predict(data))
+    domens = []
+    for doman in data:
+        domens.append(t.predict(data_prep_pred(doman)))
+    return(domens)
     
 from predictions import get_predictions
 from predictions import data_prep_pred
@@ -23,17 +26,25 @@ from turn_into_vector import words_into_vector
 from get_data import get_data
 from estv import estv
 t=MLPClassifier((20)*100, random_state=1,activation='logistic',max_iter=3000,warm_start=True)
-y=np.array([0]).reshape(1,-1)
+y=np.array([0])
 x=np.array([0]*38).reshape(1,-1)
-t.fit(x,y)
 with open('weights.txt','r') as r:
     for i in range(len(t.coefs_)):
         for j in range(len(t.coefs_[i])):
             for l in range(len(t.coefs_[i][j])): 
-                t.coefs_[i][j][l]=r.readline()
+                t.coefs_[i][j][l]=r.readline()[:-1]
 print('Введите путь к файлу(csv) или домен')
 inp=input()
 if(inp[-4:]=='.csv'):
-    recogn_file(inp,t)
+    result = recogn_file(inp,t)
+    for res in result:
+        if res == 0:
+            print('dga')
+        else:
+            print('legit')
 else:
-    recogn_domen(inp,t)
+    result = recogn_domen(inp,t)
+    if result==0:
+        print('dga')
+    else:
+        print('legit')
